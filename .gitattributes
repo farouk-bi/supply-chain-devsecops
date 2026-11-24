@@ -1,0 +1,5 @@
+# Fins de ligne Linux pour les scripts et YAML (sinon bash echoue sur les runners GitHub quand on commit depuis Windows)
+*.sh   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+Dockerfile text eol=lf

@@ -1,0 +1,16 @@
+# Maven
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Secrets : ne JAMAIS commiter
+cosign.key
+*.key
+*.pem
+.env
