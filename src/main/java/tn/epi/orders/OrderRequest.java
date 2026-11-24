@@ -6,11 +6,30 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-/**
- * Donnees recues du client. La validation est la premiere defense contre les injections :
- * seuls les lettres, chiffres, espaces, points et tirets sont acceptes dans le nom du produit.
- */
-public record OrderRequest(
-        @NotBlank @Size(max = 100) @Pattern(regexp = "^[\\p{L}0-9 .-]+$") String product,
-        @Min(1) @Max(100) int quantity) {
+public class OrderRequest {
+
+    @NotBlank
+    @Size(max = 100)
+    @Pattern(regexp = "^[\\p{L}0-9 .-]+$")
+    private String product;
+
+    @Min(1)
+    @Max(100)
+    private int quantity;
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
